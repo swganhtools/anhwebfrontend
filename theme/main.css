@@ -1,0 +1,208 @@
+*{/* Reset browsers default margin,padding and font sizes */
+margin:0;padding:0;}
+html {
+	color:#676767;
+	background-color:#ACA8A1;
+	font-size:100%;
+}
+
+body {
+	/* Text-Sizing with ems:http://www.clagnut.com/blog/348/ */
+	font-family:Verdana,Helvetica,Arial,sans-serif;
+	color:#676767;
+	background-color:#ACA8A1;
+	font-size:62.5%;/* This sets the default font size to be equivalent to 10px */
+	margin:0;
+}
+
+html,body {
+	height:100%;
+	color:black;
+}
+
+.clear {
+	clear:both;
+}
+
+.site-section {
+	margin:0 auto;
+	width:895px;
+	}
+	
+#page-section-header {
+	background:#ACA8A1 url("../theme/images/bg_body.gif") repeat-y top center;
+	}
+	
+#page-section-logo	{
+	text-align:center;
+	}
+	
+#page-section-mainmenu	{
+	width:830px;
+	margin:0 auto;
+	}
+	
+#page-section-mainmenu ul {
+	background-image:url(../theme/subnav/bg.jpg);
+	background-repeat:repeat-x;
+	display:block;
+	height:29px;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	width:100%;-moz-border-radius:0 0 6px 6px;
+	-webkit-border-bottom-left-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-khtml-border-bottom-left-radius:6px;
+	-khtml-border-bottom-right-radius:6px;
+	border-bottom-left-radius:6px;border-bottom-right-radius:6px;
+	}
+	
+#page-section-mainmenu ul li {
+	padding:0px;
+	margin:0px;
+	display:inline;
+	list-style:none;
+}
+
+#page-section-mainmenu ul li a {
+	color:#222;
+	display:block;
+	float:left;
+	font-family:'Trebuchet MS';
+	font-size:12px;
+	height:29px;
+	margin-right:6px;
+	padding-right:13px;
+	text-decoration:none;
+}
+
+#page-section-mainmenu ul li a span {
+	display:block;
+	line-height:14px;
+	padding:6px 0 9px 13px;
+}
+
+#page-section-mainmenu ul li a:hover {
+	background:transparent url('../theme/subnav/right.jpg') no-repeat scroll top right;
+}
+
+#page-section-mainmenu ul li a:hover span {
+	background:transparent url('../theme/subnav/left.jpg') no-repeat top left;
+	}
+	
+#page-section-mainmenu ul li a:active,#nav ul li a:visited {
+	outline:none;
+	}
+	
+#page-section-mainmenu ul li a:active {
+	color:#CCCCCC;
+	}
+	
+#page-section-body	{
+	background:#ACA8A1 url("../theme/images/bg_body.gif") repeat-y top center;
+	-moz-border-radius:0 0 12px 12px;
+	-webkit-border-bottom-left-radius:12px;
+	-webkit-border-bottom-right-radius:12px;
+	-khtml-border-bottom-left-radius:12px;
+	-khtml-border-bottom-right-radius:12px;
+	border-bottom-left-radius:12px;
+	border-bottom-right-radius:12px;
+	}
+	
+#page-section-content	{
+	padding:10px 25px 30px;
+	}
+	
+#page-section-content a	{
+	text-decoration:none;
+	}
+	
+#page-section-content a.no-underline {
+	text-decoration:none;
+	}
+	
+#page-section-content h3 a{color:#a37d58;}
+#page-section-content h3{font-family:'Trebuchet MS',Arial;font-weight:bold;text-transform:uppercase;border-bottom:1px solid #CCCCCC;margin-bottom:3px;padding-bottom:2px;font-size:1.05em;color:#a37d58;margin-top:20px;}
+#page-section-content h3 span{color:#222222;}
+#page-section-content h4,#page-section-content h5{font-family:"Lucida Grande",Verdana,Helvetica,Arial,sans-serif;font-size:1.2em;text-transform:none;color:#333333;margin-top:1.5em;}
+#page-section-content p{margin-bottom:1em;font-size:1.2em;}
+#page-section-content strong{color:#222222;}
+#page-section-content b{color:#222222;font-weight:normal;}
+#page-section-content ul{font-size:1.2em;margin-left:2em;line-height:1.3em;}
+#page-section-content ul ul{font-size:1em;}
+#page-section-content ul h3{font-size:1em;}
+#page-section-content ul.list{margin-bottom:1em;}
+#page-section-content ul.list ul{margin-bottom:0;}
+#page-section-content ul.list li{margin-bottom:0.2em;font-size:1.2em;margin-left:1.5em;}
+#page-section-content ul.list li li{font-size:1em;}
+#page-section-footer{}
+
+#copyright	{
+	padding:0 5px 5px 5px;
+	text-align:center;
+	color:#555555;
+	}
+	
+#copyright a {
+	color:#222222;
+	}
+
+h1	{
+	font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+	margin-right:200px;
+	color:#FFFFFF;
+	margin-top:15px;
+	font-weight:bold;
+	font-size:2em;
+	}
+	
+h2	{
+	/* Forum header titles */
+	font-family:"Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-weight:normal;
+	color:#3f3f3f;
+	font-size:2em;/* margin:0.8em 0 0.2em 0;*/
+	}
+	
+h2.solo {
+	margin-bottom:1em;
+	}
+	
+h3	{
+	/* Sub-headers (also used as post headers,but defined later) */
+	font-family:Arial,Helvetica,sans-serif;
+	font-weight:bold;
+	text-transform:uppercase;
+	border-bottom:1px solid #CCCCCC;
+	margin-bottom:3px;
+	padding-bottom:2px;
+	font-size:1.05em;
+	color:#a37d58;
+	margin-top:20px;}
+	
+h4	{
+	/* Forum and topic list titles */
+	font-family:"Trebuchet MS",Verdana,Helvetica,Arial,Sans-serif;
+	font-size:1.3em;
+	}
+	
+p	{
+	line-height:1.3em;
+	font-size:1.1em;
+	margin-bottom:1.5em;
+	}
+	
+img	{
+	border-width:0;
+	}
+	
+hr	{
+	border:0 none #FFFFFF;
+	border-top:1px solid #CCCCCC;
+	height:1px;
+	margin:5px 0;
+	display:block;
+	clear:both;
+	}
+
