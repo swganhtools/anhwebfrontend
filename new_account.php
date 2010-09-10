@@ -76,24 +76,24 @@ include("menu.php");
       <div id="page-section-body" class="site-section">
         <div id="page-section-content">
 <form action="create_new_account.php" method="POST">
-Username:<input type='text' name='username'><br><br>
-Password:<input type='password' name='password'><br><br>
-Repeat password:<input type='password' name='password1'><br><br>
-Language<select name='language' value='options'>
-<option value='enus'>English</option>
-<option value='fr'>French</option>
-<option value='sp'>Spanish</option>
+Username:<input type='text' name='username'><br><br><!--LANGINSERT-->
+Password:<input type='password' name='password'><br><br><!--LANGINSERT-->
+Repeat password:<input type='password' name='password1'><br><br><!--LANGINSERT-->
+Language<select name='language' value='options'><!--LANGINSERT-->
+<option value='enus'>English</option><!--LANGINSERT-->
+<option value='fr'>French</option><!--LANGINSERT-->
+<option value='sp'>Spanish</option><!--LANGINSERT-->
 </select><br><br>
-First name:<input type='text' name='firstname'><br><br>
-Last name:<input type='text' name='lastname'><br><br>
-E-mail address:<input type='text' name='email'><br><br>
+First name:<input type='text' name='firstname'><br><br><!--LANGINSERT-->
+Last name:<input type='text' name='lastname'><br><br><!--LANGINSERT-->
+E-mail address:<input type='text' name='email'><br><br><!--LANGINSERT-->
 <input type="submit" />
 </form>
 
           
           
           <h2></h2>
-          <h3>Here you can create an swg:anh account! </h3>
+          <h3>Here you can create an swg:anh account! </h3><!--LANGINSERT-->
           <li><span>
 	   <form action='change_lang.php' method='POST'>
 	   

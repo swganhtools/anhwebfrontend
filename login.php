@@ -8,13 +8,17 @@ $result = mysql_query("SELECT COUNT(*) FROM account WHERE Username='$username' a
 $result = mysql_fetch_row($result); 
 $result = $result[0];
 
+$active = mysql_query("SELECT active FROM account WHERE Username='$username' and Pass='$password'") or die(mysql_error());
+$active = mysql_fetch_row($active); 
+$active = $active[0];
 
-if($result == 1){
+if($result != 1 || $active != 1){
+$_SESSION['error'] = "error05";
+header("Location:"."error.php");//LANGINSERT
+}
+else {
 $_SESSION['username'] = $username;
 
 header("Location:".$return_url);
-}
-else {
-echo "Wrong Username or Password. Use the back button. If you think this message is incorrect, contact the webmaster.";
 }
 ?>

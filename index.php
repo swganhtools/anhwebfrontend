@@ -12,19 +12,7 @@ echo "    <title>SWG:ANH &bull; Bringing PreCU back to life...</title>";
 echo "    <link rel='shortcut icon' href='favicon.ico' />";
 echo "    <link rel='stylesheet' type='text/css' media='screen' href='theme/main.css' />";
 
-// This section will generate a var containing the current page URL. This will be used to allow the language script to redirect users back to the page they
-// were on, in the language they selected. It is registered as a session variuable that will change every time the page changes.
-function curPageURL() {
- $pageURL = 'http';
-// if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
- $pageURL .= "://";
- if ($_SERVER["SERVER_PORT"] != "80") {
- $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-} else {
-  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
- }
- return $pageURL;
-}
+include 'previous_url.php';
 // Here we register the URL we grabbed earlier in the session var.
 $_SESSION['return_url'] = curPageURL();
 
@@ -53,10 +41,10 @@ include("menu.php");
           <!--// PAGE CONTENT STARTS HERE -->
           
           
-          <h2>SWG:ANH .com Design Template</h2>
-          <h3>Nearly Complete... css file could do with some formatting</h3>
+          <h2>SWG:ANH .com Design Template</h2>//LANGINSERT
+          <h3>Nearly Complete... css file could do with some formatting</h3><!--LANGINSERT-->
           
-          <p>This is the basic page layout for the swganh.com website</p>
+          <p>This is the basic page layout for the swganh.com website</p><!--LANGINSERT-->
           
           
           <!--// PAGE CONTENT ENDS HERE -->

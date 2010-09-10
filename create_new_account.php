@@ -18,7 +18,7 @@ $lastname = mysql_real_escape_string($_POST['lastname']);
 $email = mysql_real_escape_string($_POST['email']);
 $today = date("Y-m-d H:i:s");
 $type = 1;
-$active = 1;
+$active = 0;
 echo "hello";
 $usr_count = mysql_query("SELECT COUNT(*) FROM account WHERE Username = '$username'") or die(mysql_error());
 //$usr_count = mysql_fetch_row($usr_count) or die(mysql_error()); 
@@ -36,8 +36,18 @@ if($password != $password1){
 }elseif($email_count != 0){
 	$_SESSION['error'] = $error2;
 	header("Location:".error.php);
-}else{
-	$q = mysql_query("INSERT INTO account (Username, Firstname, Lastname, Email, Active, User_type, User_language, User_registration, Pass) VALUES('$username', '$firstname', '$lastname', '$email', '$active', '$type', '$language', '$today', '$password')") or die(mysql_error());
+}
+//REVISE
+else{
+	mysql_query("INSERT INTO account (Username, Firstname, Lastname, Email, Active, User_type, User_language, User_registration, Pass) VALUES('$username', '$firstname', '$lastname', '$email', '$active', '$type', '$language', '$today', '$password')") or die(mysql_error());
+	
+	$id = mysql_query("SELECT User_id FROM account WHERE Username = '$username'") or die(mysql_error());
+	
+	$message = "Welcome to the exciting world of Star Wars Galaxies : A New Hope!
+				Your new username is ".$username."! Please click the following link or paste it in a web browser to complete the activation process.
+				HTTP://www.swganh.com/account_activate.php?id=".$id;//LANGINSERT
+	$headers = "From: matt@swganh.com.com\r\n";
+	mail($email, 'SWG:ANH New account registration/confirmaton', $message, $headers);//LANGINSERT
 }
 echo "hello";
 ?>

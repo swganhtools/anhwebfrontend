@@ -38,19 +38,7 @@ if (ref != '') {land(loc,target);}
 //-->
 </script>";
 
-// This section will generate a var containing the current page URL. This will be used to allow the language script to redirect users back to the page they
-// were on, in the language they selected. It is registered as a session variuable that will change every time the page changes.
-function curPageURL() {
- $pageURL = 'http';
-// if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
- $pageURL .= "://";
- //if ($_SERVER["SERVER_PORT"] != "80") {
-//  $pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-// } else {
-  $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
-// }
- return $pageURL;
-}
+include 'previous_url.php';
 // Here we register the URL we grabbed earlier in the session var.
 $_SESSION['return_url'] = curPageURL();
 
@@ -98,19 +86,19 @@ include("menu.php");
         <div id="page-section-content">
 <center><form action="dummy" method="post">
 <select name="choice" size="1" onChange="jump(this.form)">
-<option value="plugins/user_admin.php*admin_main">User admin</option>
-<option value="plugins/manage_news.php*admin_main">Manage news</option>
-<option value="plugins/manage_server.php*admin_main">Manage server</option>
-<option value="plugins/maintenance.php*admin_main">Maintenance</option>
+<option value="plugins/usr_admin/user_admin.php*admin_main">User admin</option><!--LANGINSERT-->
+<option value="plugins/manage_news.php*admin_main">Manage news</option><!--LANGINSERT-->
+<option value="plugins/manage_server.php*admin_main">Manage server</option><!--LANGINSERT-->
+<option value="plugins/maintenance.php*admin_main">Maintenance</option><!--LANGINSERT-->
 </select></form>
-<iframe src ="html_intro.asp" name="admin_main" width="100%" height="300" frameborder="0" scrolling="no">
+<iframe src ="html_intro.asp" name="admin_main" width="100%" height="400" frameborder="0" scrolling="auto">
   <p>Your browser does not support iframes.</p>
 </iframe>
            </center>
           
           
           <h2></h2>
-          <h3>Here you can create an swg:anh account! </h3>
+          <h3>Here you can create an swg:anh account! </h3><!--LANGINSERT-->
           <li><span>
 	   <form action='change_lang.php' method='POST'>
 	   
@@ -125,7 +113,7 @@ include("menu.php");
 		</form>
 		
 	   </span></li>
-          <p>This is the basic page layout for the swganh.com website</p>
+          <p>This is the basic page layout for the swganh.com website</p><!--LANGINSERT-->
           
           
           <!--// PAGE CONTENT ENDS HERE -->

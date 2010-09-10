@@ -29,23 +29,23 @@ die("You must log in!");
 
     <title>SWG:ANH &bull; Bringing PreCU back to life...</title>
 
-    <link rel='shortcut icon' href='favicon.ico' />
-    <link rel='stylesheet' type='text/css' media='screen' href='theme/main.css' />
+    <link rel='shortcut icon' href='../favicon.ico' />
+    <link rel='stylesheet' type='text/css' media='screen' href='../theme/main.css' />
 </head>
 
 <body>
 
 <table border="1">
   <tr>
-    <td>User ID</td>
-    <td>Username</td>
-    <td>First Name</td>
-    <td>Last name</td>
-    <td>e-mail</td>
-    <td>active?</td>
-    <td>User type</td>
-    <td>Last login</td>
-    <td>Registration date</td>
+    <td>User ID</td><!--LANGINSERT-->
+    <td>Username</td><!--LANGINSERT-->
+    <td>First Name</td><!--LANGINSERT-->
+    <td>Last name</td><!--LANGINSERT-->
+    <td>e-mail</td><!--LANGINSERT-->
+    <td>active?</td><!--LANGINSERT-->
+    <td>User type</td><!--LANGINSERT-->
+    <td>Last login</td><!--LANGINSERT-->
+    <td>Registration date</td><!--LANGINSERT-->
   </tr>
 <?php
 $result = mysql_query("SELECT * FROM account") or die(mysql_error());
@@ -61,6 +61,11 @@ while($row = mysql_fetch_array($result)){
 	<td>".$row['User_type']."</td>
 	<td>".$row['User_lastlogin']."</td>
 	<td>".$row['User_registration']."</td>
+	<td><form action='admin_ind_user.php' method='post'>
+	<input type='hidden' name='id' value=".$row['User_id'].">
+	<input type='submit' value='Edit user'>
+	</form>
+	</td>
 	</tr>";
 }
 echo "</table>";

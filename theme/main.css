@@ -99,6 +99,11 @@ html,body {
 	color:#CCCCCC;
 	}
 	
+#page-section-userinfo {
+	vertical-align:middle;
+	text-align:right;
+}
+
 #page-section-body	{
 	background:#ACA8A1 url("../theme/images/bg_body.gif") repeat-y top center;
 	-moz-border-radius:0 0 12px 12px;

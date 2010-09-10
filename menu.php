@@ -22,7 +22,11 @@ if(isset($_SESSION['username']) && $permission >= 2){
 	   echo $menu004;
 	   echo "</span></a></li><li><a href='admin.php'><span>";
 	   echo $menu006;
-	   echo "</span></a></li></div></div>";}
+	   echo "</span></a></li>";
+	   echo "<span id='page-section-userinfo'>";
+	   echo $_SESSION['username'];
+	   echo "</span>
+	   </div></div>";}
 	   
 	   elseif(isset($_SESSION['username']) && $permission <= 1){
 		   echo"<div id='page-section-mainmenu'><ul><li><a href='index.php'><span>";
@@ -33,7 +37,11 @@ if(isset($_SESSION['username']) && $permission >= 2){
 		   echo $menu003;
 		   echo "</span></a></li><li><a href='my_account.php'><span>";
 		   echo $menu004;
-		   echo "</span></a></li></div></div>";}
+		   echo "</span></a></li>";
+		   echo "<span id='page-section-userinfo'>";
+	   	   echo $_SESSION['username'];
+	   	   echo "</span>
+	       </div></div>";}
 
 else{
        echo"<div id='page-section-mainmenu'><ul><li><a href='index.php'><span>";
@@ -46,7 +54,7 @@ else{
 	   echo $menu005;
 	   echo "</span></a></li>";
 	   
-	   echo "<span>
+	   echo "<span id='page-section-userinfo'>
 	   <form action='login.php' method='POST'>
 	   
 		<input type='text' value='username' name='username'>
@@ -58,7 +66,7 @@ else{
 		</form>
 		
 	   </span>
-	   			</li>
+	   		
           </ul>
      	</div>
       </div>";}
