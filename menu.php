@@ -12,35 +12,24 @@ else{}
 
 if(isset($_SESSION['username']) && $permission >= 2){
 		
-       echo"<div id='page-section-mainmenu'><ul><li><a href='index.php'><span>";
-	   echo $menu001;
-	   echo "</span></a></li><li><a href='news.php'><span>";
-	   echo $menu002;
-	   echo "</span></a></li><li><a href='server_status.php'><span>";
-	   echo $menu003;
-	   echo "</span></a></li><li><a href='my_account.php'><span>";
-	   echo $menu004;
-	   echo "</span></a></li><li><a href='admin.php'><span>";
-	   echo $menu006;
-	   echo "</span></a></li>";
-	   echo "<span id='page-section-userinfo'>";
-	   echo $_SESSION['username'];
-	   echo "</span>
-	   </div></div>";}
+		   echo"<div id='page-section-mainmenu'><ul>
+		    <li><a href='index.php'><span>".$menu001."</span></a></li>
+			<li><a href='news.php'><span>".$menu002."</span></a></li>
+			<li><a href='server_status.php'><span>".$menu003."</span></a></li>
+			<li><a href='my_account.php'><span>".$menu004."</span></a></li>
+			<li><a href='admin.php'><span>".$menu006."</span></a></li>
+		    <span id='page-section-userinfo'>".$_SESSION['username']."</span>
+			<span id='page-section-userinfo'><a href='logout.php'>Logout</a></span>
+	       </div></div>";}
 	   
 	   elseif(isset($_SESSION['username']) && $permission <= 1){
-		   echo"<div id='page-section-mainmenu'><ul><li><a href='index.php'><span>";
-		   echo $menu001;
-		   echo "</span></a></li><li><a href='news.php'><span>";
-		   echo $menu002;
-		   echo "</span></a></li><li><a href='server_status.php'><span>";
-		   echo $menu003;
-		   echo "</span></a></li><li><a href='my_account.php'><span>";
-		   echo $menu004;
-		   echo "</span></a></li>";
-		   echo "<span id='page-section-userinfo'>";
-	   	   echo $_SESSION['username'];
-	   	   echo "</span>
+		   echo"<div id='page-section-mainmenu'><ul>
+		    <li><a href='index.php'><span>".$menu001."</span></a></li>
+			<li><a href='news.php'><span>".$menu002."</span></a></li>
+			<li><a href='server_status.php'><span>".$menu003."</span></a></li>
+			<li><a href='my_account.php'><span>".$menu004."</span></a></li>
+		    <span id='page-section-userinfo'>".$_SESSION['username']."</span>
+			<span id='page-section-userinfo'><a href='logout.php'>Logout</a></span>
 	       </div></div>";}
 
 else{

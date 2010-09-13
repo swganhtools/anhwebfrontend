@@ -14,7 +14,7 @@ $active = $active[0];
 
 if($result != 1 || $active != 1){
 $_SESSION['error'] = "error05";
-header("Location:"."error.php");//LANGINSERT
+header("Location:"."message.php");//LANGINSERT
 }
 else {
 $_SESSION['username'] = $username;

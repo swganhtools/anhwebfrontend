@@ -9,7 +9,7 @@
 -- http://www.phpmyadmin.net\
 --\
 -- Host: localhost\
--- Generation Time: Sep 07, 2010 at 01:09 AM\
+-- Generation Time: Sep 12, 2010 at 11:24 PM\
 -- Server version: 5.1.44\
 -- PHP Version: 5.3.2\
 \
@@ -33,11 +33,18 @@ CREATE TABLE `account` (\
   `Email` char(64) COLLATE utf8_unicode_ci NOT NULL,\
   `Active` tinyint(1) NOT NULL,\
   `User_type` int(11) NOT NULL,\
-  `User_language` int(11) NOT NULL,\
+  `User_language` varchar(11) COLLATE utf8_unicode_ci NOT NULL,\
   `User_lastlogin` datetime NOT NULL,\
   `User_registration` datetime NOT NULL,\
   `Pass` char(16) COLLATE utf8_unicode_ci NOT NULL,\
   UNIQUE KEY `user_id` (`User_id`),\
   KEY `user_type` (`User_type`)\
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;\
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;\
+\
+--\
+-- Dumping data for table `account`\
+--\
+\
+INSERT INTO `account` VALUES(1, 'matthew798', 'Matthew', 'Goulart', 'matthew.goulart@gmail.com', 1, 3, 'enus', '2010-09-01 19:58:15', '2010-09-01 19:58:18', 'matthew798');\
+INSERT INTO `account` VALUES(2, 'nazoreen', 'Naz', 'Oreen', 'nazoreen@babylone.net', 1, 3, 'enus', '2010-09-13 23:21:53', '2010-09-13 23:21:58', 'nazoreen');\
 }

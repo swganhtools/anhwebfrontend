@@ -8,7 +8,6 @@ if(isset($_SESSION['lang']));
 $lang = $_SESSION["lang"];
 
 include ('lang/'.$lang.'.php');
-echo "hello";
 $username = mysql_real_escape_string($_POST['username']);
 $password = mysql_real_escape_string($_POST['password']);
 $password1 = mysql_real_escape_string($_POST['password1']);
@@ -19,23 +18,17 @@ $email = mysql_real_escape_string($_POST['email']);
 $today = date("Y-m-d H:i:s");
 $type = 1;
 $active = 0;
-echo "hello";
+
 $usr_count = mysql_query("SELECT COUNT(*) FROM account WHERE Username = '$username'") or die(mysql_error());
-//$usr_count = mysql_fetch_row($usr_count) or die(mysql_error()); 
+$usr_count = mysql_fetch_row($usr_count) or die(mysql_error()); 
 $usr_count = $usr_count[0];
 $email_count = mysql_query("SELECT COUNT(*) FROM account WHERE Email = '$email'") or die(mysql_error());
-//$email_count = mysql_fetch_row($email_count) or die(mysql_error()); 
+$email_count = mysql_fetch_row($email_count) or die(mysql_error()); 
 $email_count = $email_count[0];
-echo $email;
-if($password != $password1){
-	$_SESSION['error'] = $error0;
-	header("Location:".error.php);
-}elseif($usr_count != 0){
-	$_SESSION['error'] = $error1;
-	header("Location:".error.php);
-}elseif($email_count != 0){
-	$_SESSION['error'] = $error2;
-	header("Location:".error.php);
+
+if($password != $password1 || $usr_count != 0 || $email_count != 0){
+	//$_SESSION['error'] = $error0;
+	header("Location:message.php");
 }
 //REVISE
 else{
@@ -49,5 +42,5 @@ else{
 	$headers = "From: matt@swganh.com.com\r\n";
 	mail($email, 'SWG:ANH New account registration/confirmaton', $message, $headers);//LANGINSERT
 }
-echo "hello";
+
 ?>
